@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>eMercado - Todo lo que busques está aquí</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        body {
+            background-image: url(img/login2.png);
+            /* se edita imagen login.png */
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-size: cover;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav w-100 justify-content-between">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">Categorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sell.html">Vender</a>
+                    </li>
+                    <li class="nav-item" id="sessionli">
+                        <!--  control de login -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="row order-0" id="showalert">
+
+        </div>
+        <div class="row order-1" id="divcart">
+            <!--lista de carrito-->
+            <div id="cartlist" class="col-7 order-1">
+                <table class="table table-responsive">
+                    <thead class="thead-light">
+                        <tr>
+                            <th class="cart_thead_tr" scope="col" id="product-remove"></th>
+                            <th class="cart_thead_tr" scope="col" id="product-thumbnail"></th>
+                            <th class="cart_thead_tr" scope="col" id="product-name">Producto</th>
+                            <th class="cart_thead_tr" scope="col" id="product-price">Precio</th>
+                            <th class="cart_thead_tr" scope="col" id="product-quantity">Cantidad</th>
+                            <th class="cart_thead_tr" scope="col" id="product-subtotal">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbcart">
+
+                    </tbody>
+
+                </table>
+            </div>
+            <div id="total_of_cart" class="row-3 order-3">
+                <div>
+                </div>
+                <div id="S-E-T">
+                </div>
+                <div class="order-3 ">
+                    <button id="btnconfirm" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#purchasecomplete">Finalizar compra</div>
+
+            </div>
+            <!--opciones de envio-->
+            <div id="cartopc" class="col-3 order-2">
+                <div id="sendopc" class="row order-1">
+                    <h3>Tipo de envio</h3>
+                    <div>
+                        <label><input type="radio" class="sendtype" name="envio" value="Standar" onchange="sendType()">Standar 12 a 15 dias
+                            (5%)</label><br>
+                        <label><input type="radio" class="sendtype" name="envio" value="Express" onchange="sendType()">Express 5 a 8 dias
+                            (7%)</label><br>
+                        <label><input type="radio" class="sendtype" name="envio" value="Premium" onchange="sendType()">Premium 2 a 5 dias
+                            (15%)</label>
+                    </div>
+                    <small id="small_sendmode" class="is-invalidtext" style="display:none;" >Debe seleccionar metodo de envio</small>
+
+                </div>
+                <div id="diropc" class="row order-2">
+                    <h3>Direccion de envio
+                    </h3>
+                    <div>
+                        <div>
+                            <p>Departamento :
+                                <select name="departamento" id="departamento">
+                                    <option value="default" selected disabled> </option>
+                                    <option value="Artigas">Artigas</option>
+                                    <option value="Canelones">Canelones</option>
+                                    <option value="Cerro Largo">Cerro Largo</option>
+                                    <option value="Colonia">Colonia</option>
+                                    <option value="Durazno">Durazno</option>
+                                    <option value="Flores">Flores</option>
+                                    <option value="Florida">Florida</option>
+                                    <option value="Lavalleja">Lavalleja</option>
+                                    <option value="Maldonado">Maldonado</option>
+                                    <option value="Montevideo">Montevideo</option>
+                                    <option value="Paysandú">Paysandú</option>
+                                    <option value="Río Negro">Río Negro</option>
+                                    <option value="Rivera">Rivera</option>
+                                    <option value="Rocha">Rocha</option>
+                                    <option value="Salto">Salto</option>
+                                    <option value="San José">San José</option>
+                                    <option value="Soriano">Soriano</option>
+                                    <option value="Tacuarembó">Tacuarembó</option>
+                                    <option value="Treinta y Tres">Treinta y Tres</option>
+                                </select>
+                            </p>
+                            
+                        </div>
+                        <small id="small_dep" class="is-invalidtext" style="display:none;" >Debe seleccionar uno</small>
+                        <br>
+                        <div>
+                            <p>Localidad / Ciudad
+                                <textarea name="ciudad" id="ciudad" cols="20" rows="1"></textarea>
+                            </p>
+                            <small id="small_city" class="is-invalidtext" style="display:none;" >Debe completar este campo</small>                        </div>
+                            <br>
+                        <div>
+                            <p>Calle
+                                <textarea name="Calle" id="calle" cols="20" rows="1"></textarea>
+                            </p>
+                            <small id="small_street" class="is-invalidtext" style="display:none;" >Debe completar este campo</small>
+                        </div>
+                        <br>
+                        <div>
+                            <p>Numero
+                                <textarea name="numpuerta" id="numpuerta" cols="20" rows="1"></textarea>
+                                <small id="small_street_number" class="is-invalidtext" style="display:none;" >Debe completar este campo</small>
+                            </p>
+                        </div>
+
+                        <div>
+                            <p>Esquina
+                                <textarea name="calleEsquina" id="calleEsquina" cols="20" rows="1"></textarea>
+                            </p>
+                            <small id="small_street_corner" class="is-invalidtext" style="display:none;" >Debe completar este campo</small>
+                        </div>
+                        <br>
+                        <div class="divpayforms row-4 order-3">
+                            <div class="">Formas de pago:</div>
+                        </div>
+                        <div id="pay_form_selected" style="display:none;">
+
+                        </div>
+                        <div id="pay_noselected" style="display:block;">No ha seleccionado forma de pago
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#paymodal">
+                                Formas de Pago
+                            </button>
+                        </div>
+                    </div>
+                    <!--opciones de total y confirmar-->
+
+
+
+                </div>
+
+                <!--modal de confirmacion de compra-->
+
+                <div class="modal mt-5" id="purchasecomplete" tabindex="-1"> ar
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color:#179f02;">
+                                <h5 class="modal-title">Has comprado con exito!</h5>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="col-7">Disfruta tu nuevo producto!</div>
+
+                                <button type="button" class="btn btn-danger col-4"
+                                    data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--modal de forma de pagos-->
+                <div class="modal mt-5" id="paymodal" tabindex="-1"> ar
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Forma de pago</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body row">
+                                <div class="col-6 order-1" id="credit_card_options">
+                                    <label id="card_label">
+
+                                        <input class="is-invalid"
+                                        type="radio" name="payforms" id="payforms_credit_card"
+                                            onchange="payFormOff()"> Tarjeta de Credito/Debito
+
+                                        <div>
+                                            <img class="col-2" src="img/credit_card/mastercard.png"
+                                                alt="mastercard stamp" width="30">
+                                            <img class="col-2" src="img/credit_card/visa.png" alt="visa stamp"
+                                                width="30">
+                                            <img class="col-2" src="img/credit_card/maestro.png" alt="maestro stamp"
+                                                width="30">
+                                            <img class="col-2" src="img/credit_card/discover.png" alt="Discover stamp"
+                                                width="30">
+                                        </div>
+                                    </label>
+                                    <div>
+                                        <div>
+                                            <div>Numero de tarjeta:
+                                            </div>
+                                        </div>
+                                        <input type="number" name="card_number" class="pay_by_card" id="card_number"
+                                            minlength="13" maxlength="19" placeholder="XXXX-XXXX-XXXX-XXXX"></input>
+                                        <p>Codigo de Seguridad:</p>
+                                        <input type="password" placeholder="CVC" name="card_segurity"
+                                            class="pay_by_card" id="card_cvc" style="width:100px;"></input>
+                                            <small id="small_cvc" style="display:none;">El código situado en el reverso de la tarjeta de crédito</small>
+                                    
+                                        <p>Vencimiento (MM/AA):</p>
+                                        <input type="date" name="card_expiration" class="pay_by_card"
+                                            id="card_expiration"></input>
+                                    </div>
+                                    <div class="col">
+                                        <p>Nombre y Apellido:</p>
+                                        <input type="text" name="pay_user_name" class="pay_by_card" id="pay_user_name"
+                                            placeholder="Nombre del usuario de la tarjeta">
+                                            <small id="small_name" style="display:none;">Completar campo</small>
+                                        <p>Documento de identidad:</p>
+                                        <input type="numeric" name="pay_user_ci" class="pay_by_card" id="pay_user_ci"
+                                            placeholder="12345678">
+                                            <small id="small_ci" style="display:none;">sin puntos ni guiones </small>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-5 order-2">
+                                    <div id="bank" class="row order-1">
+                                        <label id="bank_label">
+                                            <input type="radio" name="payforms" id="payforms_bank_trans"
+                                                onchange="payFormOff()"> Cuenta Bancaria
+                                        </label>
+                                        <p>Numero de cuenta</p>
+                                        <input type="number" name="bank_account" class="pay_by_bank"
+                                            id="bank_account_number" maxlength="15"
+                                            placeholder="XXXX-XXXXXXXXXXXX"></input>
+                                            <small id="small_bank" style="display:none;">Digite una cuenta valida </small>
+                                    </div>
+                                    <div id="paypal" class="row order-2 mt-5">
+                                        <label>
+                                            <img class="col-2" src="img/credit_card/paypal.png" alt="Paypal stamp"
+                                                width="30">
+                                            <input type="radio" name="payforms" id="payforms_bank_trans"
+                                                onchange="payFormOff()" disabled> Paypal
+
+                                        </label>
+                                        Disponible proximamente
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer" style="background-color:#0d6efd;">
+                                <button type="button" class="btn btn-danger col-4"
+                                    data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-success col-4"
+                                    onclick="fn_PayFormValidator()">Guardar</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+    </main>
+    <footer class="text-muted" id="footer">
+        <div class="container">
+            <p class="float-end">
+                <a href="#">Volver arriba</a>
+            </p>
+            <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a
+                    Programar</a> -
+                2022</p>
+            <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+        </div>
+    </footer>
+    <div id="spinner-wrapper">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>
