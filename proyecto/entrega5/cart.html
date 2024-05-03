@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>eMercado - Todo lo que busques está aquí</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        body {
+          background-image: url(img/login2.png); /* se edita imagen login.png */
+          background-repeat: no-repeat;
+          background-position-y: center;
+          background-size: cover;
+        }
+      </style>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav w-100 justify-content-between">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">Categorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sell.html">Vender</a>
+                    </li>
+                    <li class="nav-item" id="sessionli">
+                        <!--  control de login -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="row order-0" id="showalert">
+
+        </div>
+        <div class="row order-1" id="divcart">
+            <!--lista de carrito-->
+            <div id="cartlist" class="col-7 order-1">
+                <table class="table table-responsive">
+                    <thead class="thead-light">
+                        <tr>
+                            <th class="cart_thead_tr" scope="col" id="product-remove"></th>
+                            <th class="cart_thead_tr" scope="col" id="product-thumbnail"></th>
+                            <th class="cart_thead_tr" scope="col" id="product-name">Producto</th>
+                            <th class="cart_thead_tr" scope="col" id="product-price">Precio</th>
+                            <th class="cart_thead_tr" scope="col" id="product-quantity">Cantidad</th>
+                            <th class="cart_thead_tr" scope="col" id="product-subtotal">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbcart">
+                        
+                    </tbody>
+
+                </table></div>
+            <!--opciones de envio-->
+            <div id="cartopc" class="col-3 order-2">
+                <div id="sendopc"class="row order-1">
+                    <h3>Tipo de envio</h3>
+                    <div>
+                      <label><input type="radio" class="sendtype" name="envio" value="Standar">Standar 12 a 15 dias (5%)</label><br>
+                      <label><input type="radio" class="sendtype" name="envio" value="Express">Express 5 a 8 dias  (7%)</label><br>
+                      <label><input type="radio" class="sendtype" name="envio" value="Premium">Premium 2 a 5 dias (15%)</label>
+                      </div>
+                  </div>
+                <div id="diropc" class="row order-2">
+                    <h3>Direccion de envio
+                    </h3>
+                    <div>
+                        <div>
+                            <p>Departamento :
+                            <select name="departamento" id="departamento">
+                            <option value="default" selected disabled> </option>
+                            <option value="Artigas">Artigas</option>
+                            <option value="Canelones">Canelones</option>
+                            <option value="Cerro Largo">Cerro Largo</option>
+                            <option value="Colonia">Colonia</option>
+                            <option value="Durazno">Durazno</option>
+                            <option value="Flores">Flores</option>
+                            <option value="Florida">Florida</option>
+                            <option value="Lavalleja">Lavalleja</option>
+                            <option value="Maldonado">Maldonado</option>
+                            <option value="Montevideo">Montevideo</option>
+                            <option value="Paysandú">Paysandú</option>
+                            <option value="Río Negro">Río Negro</option>
+                            <option value="Rivera">Rivera</option>
+                            <option value="Rocha">Rocha</option>
+                            <option value="Salto">Salto</option>
+                            <option value="San José">San José</option>
+                            <option value="Soriano">Soriano</option>
+                            <option value="Tacuarembó">Tacuarembó</option>
+                            <option value="Treinta y Tres">Treinta y Tres</option>
+                          </select>
+                          </p>
+                        </div>
+                        <div>
+                            <p>Localidad / Ciudad
+                            <textarea name="ciudad" id="ciudad" cols="20" rows="1"></textarea>
+                            </p>
+                        </div>
+        
+                        <div>
+                            <p>Calle
+                                <textarea name="Calle" id="calle" cols="20" rows="1"></textarea>
+                            </p>
+                        </div>
+        
+                        <div>
+                            <p>Numero
+                                <textarea name="numpuerta" id="numpuerta" cols="20" rows="1"></textarea>
+                            </p>
+                        </div>
+        
+                        <div>
+                            <p>Esquina
+                                <textarea name="calleEsquina" id="calleEsquina" cols="20" rows="1"></textarea>
+                            </p>
+                        </div>
+        
+                    </div>
+            </div>
+            
+        </div>
+        <!--opciones de total y confirmar-->
+        <div id="div_of_cart" class="row order-2">
+            <div class="col order-1"></div>
+            <div id="total_of_cart" class="col-3 order-2">
+                <div>
+                    <div class="row order-0 divcurrency">
+                        <div class="col-4 order-1"></div>
+                        <div class="col-4 order-1">USD</div>
+                        <div class="col-4 order-2">UYU</div>
+                    </div>
+                    <div class="row order-1 divsend">Envio:</div>
+                    <div class="row order-2 divtotal">Total:</div>
+                </div>
+            </div>
+            <div class="col-4 order-3">
+            </div>
+    </main>
+    <footer class="text-muted" id="footer">
+        <div class="container">
+            <p class="float-end">
+                <a href="#">Volver arriba</a>
+            </p>
+            <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a
+                    Programar</a> -
+                2022</p>
+            <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+        </div>
+    </footer>
+    <div id="spinner-wrapper">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>
