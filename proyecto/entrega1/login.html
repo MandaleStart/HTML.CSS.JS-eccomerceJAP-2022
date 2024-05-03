@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <!-- se configura un style para la pag -->
+  <style>
+    body {
+      background-image: url(img/login2.png); /* se edita imagen login.png */
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="mt-5">
+    <!-- Se crea el contenedor del login  -->
+    <div class="form-group">
+
+      <label for="nombre">Nombre:<input type="text" id="user" name="nombre" class="form-control"></label>
+      <br>
+
+      <br>
+      <label for="password">Contraseña:<input type="password" id="pass" name="Contraseña" class="form-control"></label>
+
+      <br>
+      <!-- se crea boton de login  y login con google Oauth -->
+      <div class="logbutton">
+        <button id="btnlogin" class="btn btn-success">Login</button>
+
+        <div id="g_id_onload" data-client_id="602706773459-l6l2arq447mndkrccveictbrriv0dh62.apps.googleusercontent.com"
+          data-login_uri="https://mandalestart.github.io/login.html" data-auto_prompt="false">
+        </div>
+
+        <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
+          data-shape="rectangular" data-logo_alignment="left">
+        </div>
+      </div>
+  </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
+        2022</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+    <!-- Carga de script -->
+  <script src="js/login.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</body>
+
+</html>
