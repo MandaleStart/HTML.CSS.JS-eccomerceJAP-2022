@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>eMercado - Todo lo que busques está aquí</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	<style>
+		.bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		@media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+				font-size: 3.5rem;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<style>
+		body {
+			background-image: url(img/login2.png);
+			/* se edita imagen login.png */
+			background-repeat: no-repeat;
+			background-position-y: center;
+			background-size: cover;
+		}
+	</style>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+		<div class="container">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav w-100 justify-content-between">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="categories.html">Categorías</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="sell.html">Vender</a>
+					</li>
+					<li class="nav-item" id="sessionli">
+						<!--  control de login -->
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<main>
+		<div class="">
+			<div class="text-center">
+				<div class="col-2 order-1"></div>
+				<div id="perfil_cfg" class="order-2">
+					<div class="">
+						<h1>Mi cuenta</h1>
+					</div>
+					<div id="data_and_img">
+						<!-- carga de imagen -->
+						<div id="user_img" class="col order-2">
+							<img id="img_profile" width="300px" alt="imagen de usuario">
+							<br>
+							<input onchange="SaveFile()" accept="image/png,image/jpeg" type="file" id="imput_user_img" name="imput_user_img">
+						</div>
+						<!-- datos basicos -->
+						<div class="" id="basic-data" class="col order-1">
+							<h2>Datos básicos</h2>
+							Primer Nombre:<br>
+							<input name="primer-nombre" type="text" id="name1" maxlength="15"
+								placeholder="Primer Nombre (*)">
+							<br>
+							Segundo Nombre:<br>
+							<input name="segundo-nombre" type="text" id="name2" maxlength="15"
+								placeholder="Segundo Nombre (*)">
+							<br>
+							Primer Apellido:<br>
+							<input name="primer-apellido" type="text" id="surname1" maxlength="30"
+								placeholder="Primer Apellido (*)">
+							<br>
+							Segundo Apellido:<br>
+							<input name="segundo-apellido" type="text" id="surname2" maxlength="30"
+								placeholder="Segundo Apellido (*)">
+							<br>
+							Telefono:<br>
+							<input type="number" placeholder="09X-XXX-XXX" id="celnumber" maxlength="12">
+						</div>
+
+					</div><hr>
+					<!-- direcciones guardadas -->
+					<div class="saved-addresses">
+						<h2>Direcciones guardadas</h2>
+						<div class="btn-danger">En desarrollo</div>
+					</div>
+					<hr>
+					<div class="">
+						<!-- datos de acceso -->
+						<div class="access-data">
+							<h2>Datos de acceso</h2>
+							<input name="mail" type="mail" id="user_mail" maxlength="40" 
+								placeholder="ejemplo@ejemplo.com" title="mail">
+							<br>
+							
+							Cambiar contraseña:<br>
+							
+							<input name="clave_n" type="password" id="clave_n" maxlength="20" value=""
+								placeholder="Nueva contraseña (*)" title="Nueva contraseña (*)">
+							<input name="repetir_clave_n" type="password" id="repetir_clave_n" maxlength="20" value=""
+								placeholder="Repetir nueva contraseña (*)" title="Repetir nueva contraseña (*)">
+						</div>
+						<hr>
+						<div class="">
+							<div><button id="save_changes" class="btn btn-success">Guardar Cambios</button></div>
+							<div class="">
+								<br>Darme de baja del sistema:
+								<a href="" style="text-decoration:underline;"><strong>Darme de
+										baja</strong></a>
+							</div>
+							Recuerde completar todo los campos obligatorios marcados con un (*)
+						</div>
+					</div>
+				</div>
+				<div class="col-2 order-3"></div>
+			</div>
+		</div>
+		</div>
+	</main>
+	<footer class="text-muted" id="footer">
+		<div class="container">
+			<p class="float-end">
+				<a href="#">Volver arriba</a>
+			</p>
+			<p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a
+					Programar</a> -
+				2022</p>
+			<p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+		</div>
+	</footer>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/init.js"></script>
+	<script src="js/my-profile.js"></script>
+</body>
+
+</html>
